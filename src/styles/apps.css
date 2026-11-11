@@ -1,0 +1,379 @@
+.app-window {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  background: var(--app-bg);
+  color: var(--app-text);
+  overflow: hidden;
+  transform-origin: center;
+  transition: transform 0.38s var(--ease-spring), border-radius 0.38s var(--ease-spring);
+  will-change: transform;
+  border-radius: 0;
+}
+
+.app-window.shrunk {
+  border-radius: 160px;
+}
+
+.app-window-content {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.22s var(--ease-out);
+}
+
+.app-window:not(.shrunk) .app-window-content {
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+
+.app-weather {
+  height: 100%;
+  padding: 70px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: linear-gradient(180deg, #3a7bd5 0%, #235b9e 45%, #123c72 100%);
+  color: #fff;
+}
+
+.aw-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.aw-city {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.aw-temp {
+  font-size: 88px;
+  font-weight: 200;
+  line-height: 1.05;
+  margin-left: 10px;
+}
+
+.aw-cond {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.aw-hilo {
+  font-size: 15px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.aw-card {
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.aw-card-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.aw-hours {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aw-hour {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.aw-note {
+  margin-top: auto;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.app-music {
+  height: 100%;
+  padding: 84px 32px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(180deg, #1c1c1e 0%, #000 70%);
+  color: #fff;
+}
+
+.am-art {
+  width: 250px;
+  height: 250px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 60px rgba(250, 35, 59, 0.3);
+}
+
+.am-meta {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 14px;
+}
+
+.am-meta strong {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.am-meta span {
+  font-size: 15px;
+  color: rgba(235, 235, 245, 0.6);
+}
+
+.am-progress {
+  align-self: stretch;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.am-progress-fill {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 3px;
+}
+
+.am-times {
+  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: rgba(235, 235, 245, 0.55);
+  font-variant-numeric: tabular-nums;
+}
+
+.am-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 44px;
+  margin-top: 10px;
+}
+
+.am-controls button {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.am-main {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.am-main:active,
+.am-controls button:active {
+  opacity: 0.6;
+}
+
+.am-volume {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  color: rgba(235, 235, 245, 0.6);
+}
+
+.am-volume input {
+  flex: 1;
+  accent-color: #fff;
+}
+
+.app-settings {
+  height: 100%;
+  padding: 70px 18px 40px;
+  background: var(--app-bg);
+  overflow-y: auto;
+}
+
+.app-settings h1 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  padding: 0 6px 16px;
+}
+
+.as-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.as-group-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--app-text-dim);
+  padding-left: 16px;
+}
+
+.as-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 8px 16px;
+  background: var(--app-group-bg);
+  font-size: 16px;
+}
+
+.as-row + .as-row {
+  border-top: 0.5px solid var(--app-sep);
+}
+
+.as-group .as-row:first-of-type {
+  border-radius: 12px 12px 0 0;
+}
+
+.as-group .as-row:last-of-type {
+  border-radius: 0 0 12px 12px;
+}
+
+.as-group .as-row:only-of-type {
+  border-radius: 12px;
+}
+
+.as-row-tall {
+  border-radius: 12px;
+}
+
+.as-value {
+  color: var(--app-text-dim);
+  font-size: 15px;
+}
+
+.as-segmented {
+  display: flex;
+  background: rgba(120, 120, 128, 0.2);
+  border-radius: 9px;
+  padding: 2px;
+}
+
+.as-segmented button {
+  padding: 5px 16px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--app-text);
+}
+
+.as-segmented button.on {
+  background: var(--app-group-bg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+.as-switch {
+  width: 50px;
+  height: 30px;
+  border-radius: 16px;
+  background: rgba(120, 120, 128, 0.32);
+  position: relative;
+  transition: background 0.25s;
+}
+
+.as-switch.on {
+  background: #30d158;
+}
+
+.as-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s var(--ease-spring);
+}
+
+.as-switch.on .as-knob {
+  transform: translateX(20px);
+}
+
+.as-note {
+  font-size: 12px;
+  color: var(--app-text-dim);
+  padding: 4px 16px 0;
+  line-height: 1.45;
+}
+
+.app-photos {
+  height: 100%;
+  padding: 70px 14px 40px;
+  background: var(--app-bg);
+  overflow-y: auto;
+}
+
+.app-photos h1 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  padding: 0 6px 14px;
+}
+
+.ap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.ap-tile {
+  aspect-ratio: 1;
+}
+
+.app-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 48px;
+  text-align: center;
+}
+
+.app-placeholder h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.app-placeholder p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--app-text-dim);
+}
